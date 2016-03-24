@@ -1,0 +1,17 @@
+
+package com.rules
+import com.Person
+
+dialect "java"
+
+rule "ageRules"
+
+   when
+
+    Person(girlAge:age,sex=="F")
+    Person((girlAge+2==boyAge:age),sex=="M")
+
+    then
+    System.out.println("girl :"+girlAge+" "+"boy :"+boyAge);
+
+end

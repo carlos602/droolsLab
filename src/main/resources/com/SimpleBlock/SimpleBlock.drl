@@ -1,0 +1,36 @@
+package org.domain.test
+
+global java.util.List list
+import org.kie.api.runtime.rule.Match
+
+dialect "mvel"
+rule rule1 @department(sales)
+when
+     $s: String( this == "go1")
+then
+    list.add( getRule().getName() + ':' + $s );
+end
+rule rule2 @department(sales)
+when
+     $s: String( this == "go1")
+then
+   list.add( getRule().getName() + ':' + $s );
+end
+rule rule3 @department(sales)
+when
+    $s: String( this == "go1")
+then
+   list.add( getRule().getName() + ':' + $s );
+
+end
+rule blockerAllSalesRules @activationListener('direct')
+when
+        $s: String( this == "go2")
+       $i : Match( department =="sales" )
+
+then
+   list.add( $i.rule.name + ':' + $s  +" block");
+    list.add($i);
+   kcontext.blockMatch( $i);
+
+end

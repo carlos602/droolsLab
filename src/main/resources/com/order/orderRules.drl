@@ -1,0 +1,24 @@
+package com.order;
+dialect  "mvel"
+import com.order.OrderItem
+import com.order.Order
+import java.lang.Number
+
+rule "orderRules"
+
+    when
+
+    $order : Order()
+    $total : Number(intValue>100) from accumulate(OrderItem($price : price) from $order.orderItems,
+                                                  init(int total=0),
+                                                  action(total +=$price),
+                                                  reverse(total -= $price),
+                                                  result(total))
+    then
+    for(int i = 0; i < $order.getOrderItems().size(); i++) {
+      System.out.print($order.getOrderItems().get(i).getPrice()+" ");
+    }
+   System.out.println("####################################"+$total);
+   drools.delete($order);
+end
+

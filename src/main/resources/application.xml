@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:drools="http://drools.org/schema/kie-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://drools.org/schema/kie-spring  http://drools.org/schema/kie-spring.xsd">
+
+    <drools:kmodule id="kmodule">
+        <drools:kbase name="order" packages="com.order">
+            <drools:ksession name="order-session"/>
+        </drools:kbase>
+    </drools:kmodule>
+    <bean id="kiePostProcessor"
+          class="org.kie.spring.KModuleBeanFactoryPostProcessor"/>
+    <!--<drools:import releaseId-ref="namedKieSession"-->
+                <!--enableScanner="true" scannerInterval="1000"/>-->
+
+    <!--<drools:releaseId id="namedKieSession" groupId="org.drools"-->
+                   <!--artifactId="named-kiesession" version="6.3.0.Final"/>-->
+</beans>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.kie:kie-spring:6.4.0.CR1">
+    <CLASSES>
+      <root url="jar://E:/work/.m2/repository/org/kie/kie-spring/6.4.0.CR1/kie-spring-6.4.0.CR1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/work/.m2/repository/org/kie/kie-spring/6.4.0.CR1/kie-spring-6.4.0.CR1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://E:/work/.m2/repository/org/kie/kie-spring/6.4.0.CR1/kie-spring-6.4.0.CR1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
