@@ -14,7 +14,7 @@ import java.util.List;
  * Created by masy on 2016/3/23.
  */
 
-public class testSpringIntegration {
+public class TestSpringIntegration {
 
 
     public static void main(String[] args) {
