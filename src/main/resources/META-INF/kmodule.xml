@@ -4,7 +4,10 @@
     <!--<ksession name="age-session"/>-->
     <!--</kbase>-->
     <kbase name="order" packages="com.order" equalsBehavior="equality"><!--指定使用equals 或者用==来判断fact是否相等-->
-        <ksession name="order-session"/>
+        <ksession name="order-session" >
+<consoleLogger/>
+            <fileLogger file="/Users/carlosyang/kii/log.jj"></fileLogger>
+                </ksession>
     </kbase>
     <kbase name="SimpleBlock" declarativeAgenda="enabled" packages="com.SimpleBlock">
         <ksession name="simpleBlock-session"/>

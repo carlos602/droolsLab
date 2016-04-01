@@ -3,7 +3,7 @@ package com;
 /**
  * Created by masy on 2016/3/17.
  */
-public  class Person {
+public class Person {
     private int age;
     private String sex;
 
